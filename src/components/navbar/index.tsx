@@ -21,7 +21,7 @@ import {
 
 export default function NavBar() {
 	const { isOpen, onToggle } = useDisclosure();
-	
+
 	return (
 		<Box w="100%">
 			<Flex

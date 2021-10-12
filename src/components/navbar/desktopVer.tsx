@@ -18,13 +18,15 @@ import {
 	NavItem
 } from '../../config/navBar'
 import { useState } from 'preact/hooks';
+import { useSelector } from 'react-redux';
+import { storeCurrentRoute } from '../../redux/actions/routeAction';
 
 export const DesktopNav = () => {
-	const [currentURL, setURL] = useState(window.location.pathname);
+	const currentRoute = useSelector(state => state.currentRoute)
 	const linkColor = useColorModeValue('gray.400', 'gray.200');
 	const linkHoverColor = useColorModeValue('gray.900', 'white');
 	const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-	
+
 	return (
 	  <Stack direction={'row'} spacing={4}>
 		{NAV_ITEMS.map((navItem) => (
@@ -34,10 +36,9 @@ export const DesktopNav = () => {
 				<Link
 				  p={2}
 				  href={navItem.href ?? '#'}
-				  onClick={() => setURL(navItem.href)}
 				  fontSize={'sm'}
 				  fontWeight={500}
-				  color={navItem.href == currentURL ? linkHoverColor : linkColor}
+				  color={navItem.href == currentRoute ? linkHoverColor : linkColor}
 				  _hover={{
 					textDecoration: 'none',
 					color: linkHoverColor,

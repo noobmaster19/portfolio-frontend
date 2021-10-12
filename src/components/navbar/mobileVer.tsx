@@ -16,8 +16,10 @@ import {
 	NAV_ITEMS,
 	NavItem
 } from '../../config/navBar'
+import { useSelector } from 'react-redux';
 
 export const MobileNav = () => {
+	const currentRoute = useSelector(state => state.currentRoute)
 	return (
 	  <Stack
 		bg={useColorModeValue('white', 'gray.800')}
