@@ -11,14 +11,14 @@ export default function About() {
 
 	return (
 		<Stack spacing={10} pt={10} justify="center" textAlign="center">
-			<Heading size={'3xl'}>Getting to know me</Heading>
+			<Heading size={'3xl'}>Nice to meet you</Heading>
 			<Text>Im a year 2 computing student</Text>
 			<HStack justify="center" align="center">
 				<Link href={prev.href}>
-					<Button colorScheme="teal" size="lg" variant="outline" leftIcon={<ArrowLeftIcon />}>{prev.label}</Button>
+					<Button colorScheme="teal" size="lg" variant="outline" w="150px" leftIcon={<ArrowLeftIcon />}>{prev.label}</Button>
 				</Link>
 				<Link href={next.href}>
-					<Button colorScheme="teal" size="lg" variant="solid" rightIcon={<ArrowRightIcon />}>{next.label}</Button>
+					<Button colorScheme="teal" size="lg" variant="solid" w="150px" rightIcon={<ArrowRightIcon />}>{next.label}</Button>
 				</Link>
 			</HStack>
 		</Stack>

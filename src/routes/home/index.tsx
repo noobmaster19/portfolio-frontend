@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'preact/hooks';
 import { storeCurrentRoute } from '../../redux/actions/routeAction';
 import withRouter from 'preact-router'
+import RoutingButton from '../../components/widgets/RoutingButtons';
 
 
 export default function Home() {
@@ -14,16 +15,9 @@ export default function Home() {
 
 	return (
 		<Stack spacing={10} pt={10} justify="center" textAlign="center">
-			<Heading size={'4xl'}>Hello! I'm Dion</Heading>
+			<Heading size={'3xl'}>Hello! I'm Dion</Heading>
 			<Text>Welcome to my interactive portfolio</Text>
-			<HStack justify="center" align="center">
-				<Link href={prev.href}>
-					<Button colorScheme="teal" size="lg" variant="outline" leftIcon={<ArrowLeftIcon />}>{prev.label}</Button>
-				</Link>
-				<Link href={next.href}>
-					<Button colorScheme="teal" size="lg" variant="solid" rightIcon={<ArrowRightIcon />}>{next.label}</Button>
-				</Link>
-			</HStack>
+			<RoutingButton justify="center"/>
 		</Stack>
 	);
 }

@@ -1,4 +1,4 @@
-import { Router , getCurrentUrl} from 'preact-router';
+import { Router } from 'preact-router';
 import { ChakraProvider } from "@chakra-ui/react"
 
 // Code-splitting is automated for `routes` directory
