@@ -7,6 +7,8 @@ import {
 	useColorModeValue,
 	useBreakpointValue,
 	useDisclosure,
+	Link,
+	HStack
 } from '@chakra-ui/react';
 import {
 	HamburgerIcon,
@@ -18,10 +20,11 @@ import {
 import {
 	MobileNav
 } from './mobileVer'
+import { SOCIAL_MEDIA } from '../../config/navBar';
 
 export default function NavBar() {
 	const { isOpen, onToggle } = useDisclosure();
-
+	const linkHoverColor = useColorModeValue('gray.900', 'white');
 	return (
 		<Box w="100%">
 			<Flex
@@ -51,6 +54,22 @@ export default function NavBar() {
 						<DesktopNav />
 					</Flex>
 				</Flex>
+				<HStack display={{ md: 'none' }}>
+					{SOCIAL_MEDIA.map((socialMediaItem) => (
+							<Link
+								key={socialMediaItem.label}
+								p={2}
+								href={socialMediaItem.href ?? '#'}
+								fontSize={'sm'}
+								fontWeight={500}
+								_hover={{
+									textDecoration: 'none',
+									color: linkHoverColor,
+								}}>
+								{socialMediaItem.svg}
+							</Link>
+					))}
+				</HStack>
 			</Flex>
 
 			<Collapse in={isOpen} animateOpacity>

@@ -1,4 +1,3 @@
-import { h } from 'preact'
 import {
 	Flex,
 	Text,
@@ -16,10 +15,8 @@ import {
 	NAV_ITEMS,
 	NavItem
 } from '../../config/navBar'
-import { useSelector } from 'react-redux';
 
 export const MobileNav = () => {
-	const currentRoute = useSelector(state => state.currentRoute)
 	return (
 	  <Stack
 		bg={useColorModeValue('white', 'gray.800')}
@@ -32,7 +29,7 @@ export const MobileNav = () => {
 	);
   };
   
-  const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, children, href }: NavItem) => {
 	const { isOpen, onToggle } = useDisclosure();
   
 	return (
