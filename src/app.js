@@ -7,6 +7,7 @@ import Project from './routes/projects';
 import PageLayout from './components/pagelayout';
 import Resume from './routes/resume';
 import About from './routes/about';
+import ProjectDetails from './routes/projectdetails';
 import store from './redux/store'
 import { Provider } from 'react-redux'
 import { storeCurrentRoute } from './redux/actions/routeAction';
@@ -24,6 +25,7 @@ export default function App() {
 						<Router onChange={(url)=>handleRoute(url)}>
 							<Home path="/" />
 							<Project path="/projects" />
+							<ProjectDetails path="/project-details/:id" />
 							<Resume path="/resume" />
 							<About path="/about-me" />
 						</Router>

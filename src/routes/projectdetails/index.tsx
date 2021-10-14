@@ -5,29 +5,20 @@ import { Link } from 'preact-router';
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import Hero from '../../components/hero';
-import ProjectCards from './projectcards';
+import { PROJECT_DETAILS } from '../../config/projects';
 
-export default function Projects() {
-
+export default function ProjectDetail(props) {
+	const id = props.matches.id
+	const projectDetail = PROJECT_DETAILS.find((project)=>project.key == id)
+	console.log(projectDetail)
 	return (
 		<Stack spacing="100px">
 			<Hero
-				title="Key Projects"
-				description="Here are some key projects that i've been working on for the past 1.5 years"
+				title={projectDetail.title}
+				description={projectDetail.description}
 			/>
 			<Tabs variant="soft-rounded" colorScheme="green">
-				<TabList>
-					<Tab>Personal</Tab>
-					<Tab>Professional</Tab>
-				</TabList>
-				<TabPanels>
-					<TabPanel>
-						<ProjectCards type="personal"/>
-					</TabPanel>
-					<TabPanel>
-						<ProjectCards type="professional"/>
-					</TabPanel>
-				</TabPanels>
+				<Text>Hello</Text>
 			</Tabs>
 		</Stack>
 	);

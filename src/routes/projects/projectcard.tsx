@@ -1,41 +1,31 @@
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { Heading, Text, HStack, GridItem, Grid, Box, Badge } from '@chakra-ui/layout';
+import { Heading, Text, HStack, GridItem, Grid, Box, Badge, Stack } from '@chakra-ui/layout';
 import { Image, VStack } from "@chakra-ui/react"
+import { Link } from 'preact-router';
+import astronaut from "../../assets/Astronaut.png"
 
-
-export default function ProjectCard() {
-
+export default function ProjectCard(props) {
+    const { id, title, description, tags, image } = props;
     return (
-        <Box boxShadow="xl" p="6" rounded="md" bg="white" overflow="hidden">
-            <HStack>
-                <Image display={{ "base": "none", "lg": "flex" }} src="https://bit.ly/sage-adebayo" alt="Segun Adebayo" boxSize="150px" alignSelf="center" objectFit="cover" />
-                <VStack>
-                    <HStack w="100%">
-                        <Heading size="md" alignSelf="flex-start">
-                            OPS
+        <Link href={`/project-details/${id}`}>
+            <Box boxShadow="xl" p="6" rounded="md" bg="white" overflow="hidden">
+                <HStack alignContent="flex-start">
+                    <Image display={{ "base": "none", "lg": "flex" }} src={image ? image : astronaut} alt={image ? image : astronaut} boxSize="120px" alignSelf="center" objectFit="cover" />
+                    <VStack h={{ base: "100%", lg: "120px" }}>
+                        <Heading size="sm" alignSelf="flex-start">
+                            {title}
                         </Heading>
-                        <ArrowForwardIcon justifySelf="center" alignSelf="center" />
-                    </HStack>
-                    <Text alignSelf="flex-start">Loreuis nesciunt itaque voluptatum delectus sint iure dolor odio, et amet impedit.</Text>
-                    <Grid templateColumns="repeat(3,1fr)" gap={1} alignSelf="flex-start">
-                        <GridItem colSpan={1}>
-                            <Badge colorScheme="blue">Technical</Badge>
-                        </GridItem>
-                        <GridItem colSpan={1}>
-                            <Badge colorScheme="blue">Technical</Badge>
-                        </GridItem>
-                        <GridItem colSpan={1}>
-                            <Badge colorScheme="blue">Technical</Badge>
-                        </GridItem>
-                        <GridItem colSpan={1}>
-                            <Badge colorScheme="blue">Technical</Badge>
-                        </GridItem>
-                        <GridItem colSpan={1}>
-                            <Badge colorScheme="blue">Technical</Badge>
-                        </GridItem>
-                    </Grid>
-                </VStack>
-            </HStack>
-        </Box>
+                        <Text alignSelf="flex-start">{description}</Text>
+                        <Stack direction={'row'} alignSelf="flex-start" justifySelf="end">
+                            {
+                                tags.map((tag) => (
+                                    <Badge colorScheme={tag.color} alignSelf="auto">{tag.description}</Badge>
+                                ))
+                            }
+                        </Stack>
+                    </VStack>
+                </HStack>
+            </Box>
+        </Link>
     );
 }
