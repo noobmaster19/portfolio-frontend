@@ -15,11 +15,11 @@ import {
 	NAV_ITEMS,
 	NavItem
 } from '../../config/navBar'
+import { useSelector } from 'react-redux';
 
 export const MobileNav = () => {
 	return (
 	  <Stack
-		bg={useColorModeValue('white', 'gray.800')}
 		p={4}
 		display={{ md: 'none' }}>
 		{NAV_ITEMS.map((navItem) => (
@@ -30,8 +30,9 @@ export const MobileNav = () => {
   };
   
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-	const { isOpen, onToggle } = useDisclosure();
-  
+	const { isOpen , onToggle } = useDisclosure();
+	const currentRoute = useSelector(state => state.currentRoute)
+
 	return (
 	  <Stack spacing={4} onClick={children && onToggle}>
 		<Flex
@@ -45,7 +46,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 		  }}>
 		  <Text
 			fontWeight={600}
-			color={useColorModeValue('gray.600', 'gray.200')}>
+			color={href == currentRoute ? 'white' : 'gray.500'}>
 			{label}
 		  </Text>
 		  {children && (

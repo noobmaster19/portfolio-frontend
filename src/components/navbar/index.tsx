@@ -73,7 +73,7 @@ export default function NavBar() {
 			</Flex>
 
 			<Collapse in={isOpen} animateOpacity>
-				<MobileNav />
+				<MobileNav/>
 			</Collapse>
 		</Box>
 	);

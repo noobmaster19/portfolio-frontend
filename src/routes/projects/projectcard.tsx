@@ -8,7 +8,7 @@ export default function ProjectCard(props) {
     const { id, title, description, tags, image } = props;
     return (
         <Link href={`/project-details/${id}`}>
-            <Box boxShadow="xl" p="6" rounded="md" bg="white" overflow="hidden">
+            <Box boxShadow="xl" p="6" rounded="md" bg="gray.700" overflow="hidden">
                 <HStack alignContent="flex-start">
                     <Image display={{ "base": "none", "lg": "flex" }} src={image ? image : astronaut} alt={image ? image : astronaut} boxSize="120px" alignSelf="center" objectFit="cover" />
                     <VStack h={{ base: "100%", lg: "120px" }}>
