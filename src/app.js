@@ -11,6 +11,7 @@ import ProjectDetails from './routes/projectdetails';
 import store from './redux/store'
 import { Provider } from 'react-redux'
 import { storeCurrentRoute } from './redux/actions/routeAction';
+import theme from './theme';
 
 export default function App() {
 	const  handleRoute = async route => {
@@ -20,7 +21,7 @@ export default function App() {
 	return (
 		<div id="app"> 
 			<Provider store={store}>
-				<ChakraProvider>
+				<ChakraProvider theme={theme}>
 					<PageLayout>
 						<Router onChange={(url)=>handleRoute(url)}>
 							<Home path="/" />

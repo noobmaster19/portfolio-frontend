@@ -22,9 +22,7 @@ import { useSelector } from 'react-redux';
 
 export const DesktopNav = () => {
 	const currentRoute = useSelector(state => state.currentRoute)
-	const linkColor = useColorModeValue('gray.400', 'gray.200');
-	const linkHoverColor = useColorModeValue('gray.900', 'white');
-	const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+
 	return (
 		<>
 			<Stack direction={'row'} spacing={4}>
@@ -37,10 +35,12 @@ export const DesktopNav = () => {
 									href={navItem.href ?? '#'}
 									fontSize={'sm'}
 									fontWeight={500}
-									color={navItem.href == currentRoute ? linkHoverColor : linkColor}
+									color={navItem.href == currentRoute ? 'black' : 'gray.500'}
+									bg ={navItem.href == currentRoute ? 'teal.200' : null}
+									rounded={'sm'}
 									_hover={{
 										textDecoration: 'none',
-										color: linkHoverColor,
+										color: 'white',
 									}}>
 									{navItem.label}
 								</Link>
@@ -50,7 +50,7 @@ export const DesktopNav = () => {
 								<PopoverContent
 									border={0}
 									boxShadow={'xl'}
-									bg={popoverContentBgColor}
+									bg={'gray.600'}
 									p={4}
 									rounded={'xl'}
 									minW={'sm'}>
@@ -72,9 +72,10 @@ export const DesktopNav = () => {
 							href={socialMediaItem.href ?? '#'}
 							fontSize={'sm'}
 							fontWeight={500}
+							color={'gray.500'}
 							_hover={{
 								textDecoration: 'none',
-								color: linkHoverColor,
+								color: 'white',
 							}}>
 							{socialMediaItem.svg}
 						</Link>

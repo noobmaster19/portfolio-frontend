@@ -1,12 +1,12 @@
-import { Heading, Text, HStack, GridItem, Grid, Container, Stack } from '@chakra-ui/layout';
+import { Heading, Text, GridItem, Grid, Container, Stack } from '@chakra-ui/layout';
 import RoutingButton from '../widgets/RoutingButtons';
 
 export default function Hero(props) {
+
     return (
         <Grid
             templateRows={{ base: "repeat(2,1fr)", md: "1fr" }}
             templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }}
-            h={{base:"80vh",md:"100%"}}
             pt={10}
             gap={4}
         >
