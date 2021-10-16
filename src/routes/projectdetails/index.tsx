@@ -10,7 +10,6 @@ import { PROJECT_DETAILS } from '../../config/projects';
 export default function ProjectDetail(props) {
 	const id = props.matches.id
 	const projectDetail = PROJECT_DETAILS.find((project)=>project.key == id)
-	console.log(projectDetail)
 	return (
 		<Stack spacing="100px">
 			<Hero
