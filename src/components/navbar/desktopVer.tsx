@@ -35,12 +35,13 @@ export const DesktopNav = () => {
 									href={navItem.href ?? '#'}
 									fontSize={'sm'}
 									fontWeight={500}
-									color={navItem.href == currentRoute ? 'black' : 'gray.400'}
+									color={navItem.href == currentRoute ? 'gray.800' : 'gray.400'}
 									bg ={navItem.href == currentRoute ? 'teal.200' : null}
 									rounded={'sm'}
 									_hover={{
 										textDecoration: 'none',
-										color: 'white',
+										bgColor: navItem.href == currentRoute ? 'teal.300': null,
+										color:  navItem.href == currentRoute ? 'gray.800': 'white',
 									}}>
 									{navItem.label}
 								</Link>

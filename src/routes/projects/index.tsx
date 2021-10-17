@@ -11,6 +11,7 @@ export default function Projects() {
 	return (
 		<Stack spacing="100px">
 			<Hero
+				titleSize={'3xl'}
 				title="Key Projects"
 				description="Here are some key projects that i've been working on for the past 1.5 years"
 			/>
@@ -21,10 +22,10 @@ export default function Projects() {
 				</TabList>
 				<TabPanels>
 					<TabPanel>
-						<ProjectCards type="personal" animate={animate}/>
+						<ProjectCards type="personal" animate={animate} />
 					</TabPanel>
 					<TabPanel>
-						<ProjectCards type="professional" animate={!animate}/>
+						<ProjectCards type="professional" animate={!animate} />
 					</TabPanel>
 				</TabPanels>
 			</Tabs>

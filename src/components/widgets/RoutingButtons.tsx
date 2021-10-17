@@ -10,10 +10,10 @@ export default function RoutingButton(props) {
     return (
         <HStack align="center" justify={props.justify}>
             <Link href={prev.href}>
-                <Button colorScheme="teal" size="lg" variant="outline" w="150px" leftIcon={<ArrowLeftIcon />}>{prev.label}</Button>
+                <Button colorScheme="teal" size="lg" variant="outline" w={{base:"130px",md:"150px"}} leftIcon={<ArrowLeftIcon />}>{prev.label}</Button>
             </Link>
             <Link href={next.href}>
-                <Button colorScheme="teal" size="lg" variant="solid" w="150px" rightIcon={<ArrowRightIcon />}>{next.label}</Button>
+                <Button colorScheme="teal" size="lg" variant="solid" w={{base:"130px",md:"150px"}} rightIcon={<ArrowRightIcon />}>{next.label}</Button>
             </Link>
         </HStack>
     );

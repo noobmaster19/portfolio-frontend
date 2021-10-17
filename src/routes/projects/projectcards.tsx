@@ -9,7 +9,7 @@ export default function ProjectCards(props) {
     return (
             <Grid
                 templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }}
-                gap={2}
+                gap={4}
             >
                 {type == "personal" ?
                     PROJECT_CARDS.map((projectDetail) => (
